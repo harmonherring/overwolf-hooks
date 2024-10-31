@@ -1,10 +1,11 @@
-import { useGameEventProvider } from "./useLauncherEventProvider";
+import { useLauncherEventProvider } from "./useLauncherEventProvider";
 import { renderHook } from "@testing-library/react";
 
 describe("useGameEventProvider values", () => {
   it("should return false when there are no required features", () => {
     const { result } = renderHook(() =>
-      useGameEventProvider(
+      useLauncherEventProvider(
+        -1,
         { onInfoUpdates: () => {}, onNewEvents: () => {} },
         []
       )
