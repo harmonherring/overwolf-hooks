@@ -4,11 +4,9 @@ import { log } from "../../lib/log";
 
 interface UseLauncherEventProviderEventsDelegate {
   onInfoUpdates(
-    info:
-      | overwolf.games.events.InfoUpdates2Event
-      | overwolf.games.InstalledGameInfo
+    info: any
   ): void;
-  onNewEvents(events: overwolf.games.events.NewGameEvents): void;
+  onNewEvents(events: any): void;
 }
 const getInfo = (launcherClassId: number): Promise<overwolf.games.launchers.events.GetInfoResult<any>> => {
   return new Promise((resolve) => {
